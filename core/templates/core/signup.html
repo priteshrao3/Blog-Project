@@ -1,0 +1,60 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div>
+    <img class="about_img" src="{% static "core\images\cont.jpg" %}" alt="home"/>
+</div>
+
+<div class="container-fluid">
+<div class="row">
+
+    <div class="col-sm-5 offset-1 mt-5">
+
+      <h3 class="mt-5">Make the most of your professional life</h3>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus cumque porro quae. Quod officiis explicabo libero modi sequi qui ea similique facere minus tempora cumque aliquam autem exercitationem, architecto consectetur ipsa. Sint iure quisquam suscipit. Quam voluptas voluptates et error aliquid quidem, quis velit maxime accusamus molestiae pariatur, laboriosam atque debitis dicta voluptatibus aut cum a perspiciatis laborum tenetur? Pariatur illum, delectus expedita at ut, accusamus dolores impedit maiores harum, ea tenetur? Iure ipsum deserunt facere blanditiis dolores nam voluptas iste porro quasi saepe quaerat fugiat unde aspernatur, eveniet rem optio voluptatibus possimus debitis fugit aliquam expedita placeat quo. Nostrum quia quos molestiae tempore similique eveniet quisquam sit perspiciatis magni exercitationem odio iste, placeat magnam omnis quidem ipsum fugiat libero atque odit sapiente. Labore, natus facere deleniti amet eligendi neque quisquam ut sit commodi error deserunt fuga ipsam nesciunt dignissimos voluptates placeat autem cupiditate blanditiis quos aut dolores. Nostrum, sint!</p>
+     </div>
+
+<div class="col-sm-5 mt-5 mb-5">
+<div class="card rounded-6 bg-primary mt-2">
+
+<div>
+    <img class="responsive" src="{% static "core\images\contact.jpg" %}" alt="home"/>
+</div>
+
+        <form class="fm" action="" method = "post" novalidate>
+            <h2 class="font-weight-bold">SignUp Form</h2>
+            <p>Please fill in this form to create an account.</p>
+            {% csrf_token %}
+            {% for fm in form %}
+            <div class="form-group">
+            {{fm.label_tag}} {{fm}} <small class="text-warning">{{fm.errors|striptags}}</small>
+            </div>
+            {% endfor %}
+
+            <p>By creating an account you agree to our Terms & Privacy.</p>
+
+             {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+            <p class="alert alert-danger my-3">{{error}}</p>
+            {% endfor %}
+            {% endif %}
+
+            <input type="submit" value="Submit" class="btn btn-primary mt-2">
+             <a href="{% url 'home' %}" style="background-color:red" class="btn btn-danger mt-2">Cancel</a>
+
+        <div class="mt-5">
+            {% if messages %}
+            {% for message in messages %}
+            <p {% if message.tag %} class="alert alert-{{message.tags}} mb-5" {% endif %}>{{message}}</p>
+            {% endfor %}
+            {% endif %}
+        </div>
+
+        </form>
+      </div>
+      </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,32 @@
+body {
+    background-color: rgb(80, 11, 241);
+    color: rgb(237, 243, 239);}
+
+.jumbo-color{
+    background-color: rgb(88, 120, 124);
+    border-radius: 10px;}
+
+img {
+    width: 100%;
+    height: auto;}
+
+.btn{
+    width: 200px;
+    height: auto;
+    background-color:rgb(43, 10, 233)}
+
+.btnd{
+    width: 200px;
+    height: auto;
+    background-color:red}
+
+.fm{
+    padding: 30px;}
+    
+
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;}
+
+  #id_message{
+      height: 120px;}

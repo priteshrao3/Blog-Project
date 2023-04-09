@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div>
+    <img class="about_img" src="{% static "core\images\about.jpg" %}" alt="home"/>
+</div>
+
+<div class="col-sm-10 offset-1 mt-5">
+    <h5>{{full_name}}</h5>
+    {% for group in groups %}
+    <p>{{group.name}}</p>
+    <p>{{group.email}}</p>
+    {% endfor %}
+</div>
+{% endblock content %}

@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+</div>
+
+<div class="container">
+<div class="row">
+
+<h3 class="mt-5 font-weight-bold text-center">Blog Post</h3>
+<p class="text-center mb-5">Flutter is Google’s UI toolkit for building beautiful, natively compiled 
+    applications for mobile, web, and desktop from a single codebase. Ghaziabad, Uttar Pradesh, India
+    Flutter is Google’s UI toolkit for building beautiful, natively compiled applications for mobile, 
+    web, and desktop from a single codebase.</p>
+
+{% for post in posts %}
+<div class="jumbotron jumbotron-fluid jumbo-color mb-2">
+<div class="container">
+    <h1 class="display-6 font-weight-bold">{{post.title}}</h1>
+    <p class="lead">{{post.desc}}</p>
+</div>
+</div>
+{% endfor %}
+</div>
+</div>
+
+{% endblock content %}

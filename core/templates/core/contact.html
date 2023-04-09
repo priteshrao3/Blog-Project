@@ -1,0 +1,65 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div>
+<img class="responsive" src="{% static "core\images\contact.jpg" %}" alt="home"/>
+</div>
+
+<div class="mt-5">
+<div class="container">
+        
+ <h3>Get in Touch</h3>
+  <p>
+
+  Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam tempus 
+  magna vel turpis pharetra dictum. Get a technical audit report of your website by our expert SEO 
+  team. 24/7 technical support, chat support available. Services:
+  </p>
+</div>
+</div>
+
+<div class="container-fluid bg-primary">
+<div class="row">
+<div class="col-sm-5 offset-1">
+ <form class="mt-4" action="" method = "post" novalidate>
+ {% csrf_token %}
+
+     <div class="mt-3 text-warning p-2">
+            {% if messages %}
+            {% for message in messages %}
+            <p {% if message.tag %} class="alert alert-{{message.tags}} mb-5" {% endif %}>{{message}}</p>
+            {% endfor %}
+            {% endif %}
+        </div>
+
+        {{form.as_p}}      
+        <input type="submit" value="Submit" class="btn btn-success mb-3">
+    </form>
+</div>
+
+<div class="col-sm-4 offset-2">
+<!--Grid column-->
+        <div class="col-md-8 text-center mt-5">
+            <ul class="list-unstyled mb-0">
+                <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                    <p>R-169, HIGDUPLEX, Sector 12, Pratap Vihar, Ghaziabad Uttar Pradesh, India.</p>
+                </li>
+
+                <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                    <p>+ 01 234 567 89</p>
+                    <p>+91 9170475552</p>
+                </li>
+
+                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                    <p>prwebtechno@gmail.com</p>
+                </li>
+            </ul>
+        </div>
+        <!--Grid column-->
+</div>
+</div>
+</div>
+
+{% endblock content %}
